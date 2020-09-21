@@ -13,18 +13,19 @@ const getPostIdParam = () => {
 
 const getPost = () => {
     const postId = getPostIdParam();
-    const url = `${API_URL$}${postId}`;
+    const url = `${API_URL}${postId}`;
     fetch(url, {
         method: 'GET'
     }).then((response) => {
         return response.json()
     }).then((data)=> {
-    buildPost(data);
+        buildPost(data);
     })
 };
 
 const buildPost = (data) => {
     const postDate = new Date(parseInt(data.added_date)).toDateString();
+    const postImage = `${API_BASE_URL}${data.post_image}`;
     // HINT: Convert the date number to a Date string
     document.querySelector("header").style.backgroundImage = `url(${postImage})`;
     document.getElementById("individual-post-title").innerText = data.title;
