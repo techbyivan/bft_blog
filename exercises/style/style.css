@@ -21,6 +21,10 @@ header{
     position: relative;
 }
 
+.home-page header {
+    background-image: url(/assets/banner.jpeg);
+}
+
 header > * {
     z-index: 10;
 }
@@ -153,6 +157,10 @@ header::after {
     border: 1px solid #068197;
     border-radius: 5px;
     padding: 5px 8px;
+}
+
+a.post-link{
+    text-decoration: none;
 }
 
 footer {
